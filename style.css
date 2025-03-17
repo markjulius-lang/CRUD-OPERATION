@@ -1,0 +1,80 @@
+* {
+    font-family: monospace;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #dad7d7;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.input-box {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    padding: 5px;
+    width: 200px;
+    font-size: 14px;
+    border-radius: 15px;
+    text-align: center;
+    color: green;
+    border: 2px solid #ccc; /* Optional border color */
+    transition: border 0.3s ease-in-out; /* Smooth border transition */
+}
+
+input:focus {
+    border-color: green; /* Change border color when input is focused */
+    outline: none; /* Remove default focus outline */
+}
+
+button {
+    padding: 5px;
+    width: 50px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease-in-out;
+    color: grey;
+}
+
+button:hover {
+    background-color: green;
+    color: white;
+}
+
+.letters {
+    display: flex;
+    gap: 45px;
+    margin-top: 2px;
+    color: grey;
+}
+
+.wrapper {
+    width: 50%; /* Fixed width */
+    background: rgb(255, 255, 255); /* Green background */
+    border-radius: 10px; /* Rounded corners for a smooth look */
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    color: black;
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
+
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        width: 60%; /* Make the wrapper take up the full width on small screens */
+        padding: 15px; /* Slightly reduced padding on smaller screens */
+    }
+}
