@@ -11,15 +11,19 @@
 <body>
     
     <div class="container">
-            <h1>My Daily Tasks</h1>
-            <div class="input-box">
-                <input type="text" name="sched" placeholder = "What's My Schedule Today?">
-                <button type="submit">Add</button>
-            </div>
-            <div class = "letters">
-                <h3>Count: 0</h3>
-                <h3>Maximum: 0</h3>
-            </div>
+        <h1>My Daily Tasks Schedule</h1>
+        <div class="input-group">
+            <input type="text" id="schedInput" maxlength="50" placeholder="What's My Schedule Today?">
+            <div class="datetime-group">
+                <input type="time" id="timeInput">
+                <input type="date" id="dateInput">
+            </div>        
+            <button id="addBtn">Add</button>
+        </div>
+    </div>
+    
+    </div>
+        <div class="letters" id="letters">Letters: 0 Maximum: 50</div>
     </div>
     <div class="wrapper">
         <h3>List #</h3>
@@ -27,5 +31,7 @@
         <h3>Time</h3>
         <h3>Date</h3>
     </div>
+
+    <script src = "script.js"></script>
 </body>
 </html>

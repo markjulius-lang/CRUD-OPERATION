@@ -7,6 +7,8 @@ body {
     padding: 0;
     background-color: #dad7d7;
 }
+
+/* Centered container */
 .container {
     display: flex;
     flex-direction: column;
@@ -15,66 +17,101 @@ body {
     margin-top: 200px;
 }
 
-.input-box {
+/* Input group styling */
+.input-group {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
 }
 
-input {
-    padding: 5px;
+.input-group input {
     width: 200px;
+    padding: 5px;
     font-size: 14px;
     border-radius: 15px;
     text-align: center;
     color: green;
-    border: 2px solid #ccc; /* Optional border color */
-    transition: border 0.3s ease-in-out; /* Smooth border transition */
+    border: 2px solid #ccc;
+    transition: border 0.3s ease-in-out;
 }
 
-input:focus {
-    border-color: green; /* Change border color when input is focused */
-    outline: none; /* Remove default focus outline */
+.input-group input:focus {
+    border-color: green;
+    outline: none;
 }
 
-button {
-    padding: 5px;
-    width: 50px;
+/* Date and time input alignment */
+.date-time-group {
+    display: flex;
+    gap: 5px;
+    width: 200px;
+}
+
+#schedInput {
+    width: 200px;
+}
+
+#timeInput, #dateInput {
+    width: auto;
+}
+
+/* Add button styling */
+#addBtn {
+    min-width: 212px;
+    padding: 5px 10px;
     font-size: 14px;
-    cursor: pointer;
-    border-radius: 10px;
+    text-align: center;
+    border-radius: 15px;
     border: 1px solid #ccc;
-    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
     color: grey;
+    background-color: white;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-button:hover {
+#addBtn:hover {
     background-color: green;
     color: white;
 }
 
-.letters {
-    display: flex;
-    gap: 45px;
-    margin-top: 2px;
-    color: grey;
+#addBtn:active {
+    background-color: darkgrey;
 }
 
+/* Letters display */
+.letters {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: grey;
+    font-size: 15px;
+}
+
+/* Wrapper for task list */
 .wrapper {
-    width: 50%; /* Fixed width */
-    background: rgb(255, 255, 255); /* Green background */
-    border-radius: 10px; /* Rounded corners for a smooth look */
+    width: 50%;
+    background: white;
+    border-radius: 10px;
     margin: auto;
     display: flex;
     justify-content: space-between;
     padding: 10px;
     color: black;
     box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
-
 }
 
+/* Responsive design for smaller screens */
 @media (max-width: 480px) {
     .wrapper {
-        width: 60%; /* Make the wrapper take up the full width on small screens */
-        padding: 15px; /* Slightly reduced padding on smaller screens */
+        width: 60%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        width: 80%;
+        padding: 20px;
     }
 }
