@@ -49,35 +49,73 @@ body {
 }
 
 #schedInput {
-    width: 200px;
+    width: 250px;
 }
 
 #timeInput, #dateInput {
     width: auto;
+    color: green;
 }
 
-/* Add button styling */
-#addBtn {
-    min-width: 212px;
-    padding: 5px 10px;
-    font-size: 14px;
-    text-align: center;
-    border-radius: 15px;
-    border: 1px solid #ccc;
+#timeInput {
+    width: 115px;
+}
+.button {
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
     cursor: pointer;
-    color: grey;
-    background-color: white;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-#addBtn:hover {
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .svgIcon {
+    width: 12px;
+    transition-duration: 0.3s;
+  }
+  
+  .svgIcon path {
+    fill: white;
+  }
+  
+  .button:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
     background-color: green;
+    align-items: center;
+  }
+  
+  .button:hover .svgIcon {
+    /* width: 20px; */
+    transition-duration: 0.3s;
+    transform: translateY(-200%);
+  }
+  
+  .button::before {
+    position: absolute;
+    bottom: -20px;
+    content: "Add Task";
     color: white;
-}
-
-#addBtn:active {
-    background-color: darkgrey;
-}
+    font-size: 0px;
+  }
+  
+  .button:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    bottom: unset;
+    /* transform: translateY(-30px); */
+    transition-duration: 0.3s;
+  }
 
 /* Letters display */
 .letters {
@@ -106,12 +144,5 @@ body {
     .wrapper {
         width: 60%;
         padding: 15px;
-    }
-}
-
-@media (max-width: 320px) {
-    .container {
-        width: 80%;
-        padding: 20px;
     }
 }
