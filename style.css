@@ -60,6 +60,8 @@ body {
 #timeInput {
     width: 115px;
 }
+
+/* Button styling */
 .button {
     margin-top: 5px;
     width: 30px;
@@ -71,51 +73,51 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+    box-shadow: 0px 0px 0px 4px rgba(161, 255, 160, 0.253);
     cursor: pointer;
     transition-duration: 0.3s;
     overflow: hidden;
     position: relative;
-  }
-  
-  .svgIcon {
+}
+
+.svgIcon {
     width: 12px;
     transition-duration: 0.3s;
-  }
-  
-  .svgIcon path {
+}
+
+.svgIcon path {
     fill: white;
-  }
-  
-  .button:hover {
+}
+
+.button:hover {
     width: 140px;
     border-radius: 50px;
     transition-duration: 0.3s;
     background-color: green;
     align-items: center;
-  }
-  
-  .button:hover .svgIcon {
+}
+
+.button:hover .svgIcon {
     /* width: 20px; */
     transition-duration: 0.3s;
     transform: translateY(-200%);
-  }
-  
-  .button::before {
+}
+
+.button::before {
     position: absolute;
     bottom: -20px;
     content: "Add Task";
     color: white;
     font-size: 0px;
-  }
-  
-  .button:hover::before {
+}
+
+.button:hover::before {
     font-size: 13px;
     opacity: 1;
     bottom: unset;
     /* transform: translateY(-30px); */
     transition-duration: 0.3s;
-  }
+}
 
 /* Letters display */
 .letters {
@@ -126,6 +128,63 @@ body {
     font-size: 15px;
 }
 
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Close modal button */
+.close-modal-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.close-modal-btn:hover {
+    background-color: #45a049;
+}
+
 /* Wrapper for task list */
 .wrapper {
     width: 50%;
@@ -133,16 +192,82 @@ body {
     border-radius: 10px;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     padding: 10px;
     color: black;
     box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+/* Task Styling */
+.added-text {
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.added-text p {
+    margin: 0;
+    color: #333;
+}
+/* Edit, Delete, View Button Styling */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-button, .view-button, .delete-button {
+    background-color: #4caf50; /* Green for edit */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.edit-button:hover, .view-button:hover, .delete-button:hover {
+    background-color: #45a049;
+}
+
+/* View Button */
+.view-button {
+    background-color: #008CBA; /* Blue for view */
+}
+
+/* Delete Button */
+.delete-button {
+    background-color: #f44336; /* Red for delete */
+}
+
+.delete-button:hover {
+    background-color: #d32f2f;
 }
 
 /* Responsive design for smaller screens */
 @media (max-width: 480px) {
     .wrapper {
-        width: 60%;
+        width: 90%;
         padding: 15px;
+    }
+
+    .input-group input {
+        width: 100%;
+    }
+
+    .date-time-group {
+        width: 100%;
+    }
+
+    .button {
+        width: 50px;
+        height: 50px;
     }
 }

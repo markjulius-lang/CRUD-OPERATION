@@ -6,7 +6,6 @@
     <title>CRUD Schedule</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="IMAGES/icon.jpg" type="image/x-icon">
-
 </head>
 <body>
     <div class="container">
@@ -15,26 +14,29 @@
             <input type="text" id="schedInput" maxlength="50" placeholder="What's My Schedule Today?">
             <div class="datetime-group">
                 <input type="time" id="time4Input">
-                <input type="date" id="dateInput">              
-            </div> 
-    <button class="button">
-        <svg class="svgIcon" viewBox="0 0 384 512">
-          <path
-            d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
-          ></path>
-        </svg>
-      </button>
-        </div>
-            <div class="letters" 
-                id="letters">Letters: 0 Maximum: 50
+                <input type="date" id="dateInput">
             </div>
+            <button class="button" onclick="addText()">
+                <svg class="svgIcon" viewBox="0 0 384 512">
+                    <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="letters" id="letters">Letters: 0 Maximum: 50</div>
     </div>
 
-    <!--Wrapper-->
-    <div class="wrapper">
+    <!-- Wrapper for task list -->
+    <div class="wrapper" id="taskWrapper"></div>
 
-    </div>
+    <!-- Modal for pop-up -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <p id="modalText"></p>
+          <button class="close-modal-btn" onclick="closeModal()">OK</button>
+      </div>
+  </div>
 
-    <script src = "script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
